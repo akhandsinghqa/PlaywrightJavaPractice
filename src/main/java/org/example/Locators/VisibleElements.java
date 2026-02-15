@@ -21,8 +21,8 @@ public class VisibleElements {
                 System.out.println(link);
             }
 
-            System.out.println("All Images : "+page.locator("img").count());
-            System.out.println("Visible Images : "+page.locator("img:visible").count());
+            System.out.println("All Images : " + page.locator("img").count());
+            System.out.println("Visible Images : " + page.locator("img:visible").count());
         }
     }
 }

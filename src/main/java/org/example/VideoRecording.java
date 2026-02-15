@@ -1,20 +1,20 @@
-package org.example.Locators;
+package org.example;
 
-import com.microsoft.playwright.BrowserType;
-import com.microsoft.playwright.Locator;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.*;
 
-public class NthElementLocator {
+import java.nio.file.Paths;
+
+public class VideoRecording {
     public static void main(String[] args) throws InterruptedException {
         try (Playwright playwright = Playwright.create()) {
-            Page page = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false)).newPage();
+            Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
+            Page page = browser.newContext(new Browser.NewContextOptions().setRecordVideoDir(Paths.get("testVideos/"))).newPage();
             page.navigate("https://www.bigbasket.com/");
             Locator first_ele = page.locator("footer > div:first-child > div:first-child li >> nth=0");
             System.out.println("First Element : " + first_ele.textContent());
             Locator last_ele = page.locator("footer > div:first-child > div:first-child li >> nth=-1");
             last_ele.click();
-            Thread.sleep(2000);
+            Thread.sleep(5000);
         }
     }
 }

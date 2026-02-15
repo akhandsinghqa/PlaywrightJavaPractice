@@ -7,8 +7,9 @@ import com.microsoft.playwright.Playwright;
 
 public class RelativeLocators {
     static Page page;
+
     public static void main(String[] args) throws InterruptedException {
-        try(Playwright playwright = Playwright.create()){
+        try (Playwright playwright = Playwright.create()) {
             Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(50));
             page = browser.newPage();
             page.navigate("https://selectorshub.com/xpath-practice-page/");
@@ -28,11 +29,11 @@ public class RelativeLocators {
         }
     }
 
-    public static void selectUser(String userName){
-        page.locator("input[type='checkbox']:left-of(:text('"+userName+"'))").first().click();
+    public static void selectUser(String userName) {
+        page.locator("input[type='checkbox']:left-of(:text('" + userName + "'))").first().click();
     }
 
-    public static String getUserRole(String userName){
-        return page.locator("td:right-of(:text('"+userName+"'))").first().textContent();
+    public static String getUserRole(String userName) {
+        return page.locator("td:right-of(:text('" + userName + "'))").first().textContent();
     }
 }

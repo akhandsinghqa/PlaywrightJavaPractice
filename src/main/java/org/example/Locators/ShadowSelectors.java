@@ -7,7 +7,7 @@ import com.microsoft.playwright.Playwright;
 
 public class ShadowSelectors {
     public static void main(String[] args) throws InterruptedException {
-        try(Playwright playwright = Playwright.create()){
+        try (Playwright playwright = Playwright.create()) {
             Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
             Page page = browser.newContext().newPage();
             page.navigate("https://books-pwakit.appspot.com/explore");

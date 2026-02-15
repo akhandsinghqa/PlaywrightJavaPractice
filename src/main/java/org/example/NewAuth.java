@@ -1,4 +1,4 @@
-package org.example.Locators;
+package org.example;
 
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.AriaRole;
@@ -14,7 +14,7 @@ public class NewAuth {
             Page page = browserContext.newPage();
             page.navigate("https://automationexercise.com/");
             Thread.sleep(2000);
-            page.getByRole(AriaRole.LINK,new Page.GetByRoleOptions().setName(" Logout")).click();
+            page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(" Logout")).click();
         }
     }
 }
