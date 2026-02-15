@@ -9,7 +9,7 @@ import com.microsoft.playwright.options.AriaRole;
 public class JsPopupHandle {
     public static void main(String[] args) throws InterruptedException {
         try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.firefox()
+            Browser browser = playwright.chromium()
                     .launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(50));
             Page page = browser.newPage();
             page.navigate("https://the-internet.herokuapp.com/javascript_alerts");

@@ -5,7 +5,7 @@ import com.microsoft.playwright.*;
 public class ScopeLocators {
     public static void main(String[] args) throws InterruptedException {
         try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(50));
+            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(50));
             Page page = browser.newPage();
             page.navigate("https://datatables.net/extensions/select/examples/checkbox/checkbox.html");
             Locator row = page.locator("#example tr");

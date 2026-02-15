@@ -8,7 +8,7 @@ import com.microsoft.playwright.Playwright;
 public class FirstProgram {
     public static void main(String[] args) {
         Playwright playwright = Playwright.create();
-        Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
         Page page = browser.newPage();
         page.navigate("https://github.com/");
         String title = page.title();

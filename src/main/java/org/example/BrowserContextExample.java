@@ -6,7 +6,7 @@ import com.microsoft.playwright.options.AriaRole;
 public class BrowserContextExample {
     public static void main(String[] args) throws InterruptedException {
         Playwright playwright = Playwright.create();
-        Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
 
         BrowserContext context_one = browser.newContext();
         Page page_one = context_one.newPage();
