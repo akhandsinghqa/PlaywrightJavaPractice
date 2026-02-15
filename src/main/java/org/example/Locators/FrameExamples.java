@@ -15,7 +15,7 @@ public class FrameExamples {
             System.out.println(page.frame("main").locator("h2:has-text('Title bar')").textContent());
             System.out.println(page.frameLocator("frame[name='main']").locator("h2").textContent());
             page.frames().forEach(frame ->System.out.println(frame.name()));
-            System.out.print(page.frameByUrl("top.html").locator("h2:has-text('Title bar')").textContent());
+//            System.out.print(page.frameByUrl("top.html").locator("h2:has-text('Title bar')").textContent());
         }
     }
 
